@@ -1,0 +1,178 @@
+@import '~svbstrate/src/lib/reset.css';
+@import '~svbstrate/src/lib/display.css';
+@import '~svbstrate/src/lib/positioning.css';
+@import '~svbstrate/src/lib/flexbox.css';
+@import '~svbstrate/src/lib/align.css';
+@import '~svbstrate/src/lib/spacing.css';
+@import '~svbstrate/src/lib/z-index.css';
+@import '~svbstrate/src/lib/typography.css';
+@import '~svbstrate/src/lib/lists.css';
+
+/* couple global things */
+html, body {
+  color: #223355;
+}
+.container {
+  max-width: 1000px;
+}
+
+/* timeline nav and header */
+.cal__header {
+  padding: 0 40px;
+  padding: 80px 30px;
+  min-height: 360px;
+  background: rgba(35, 51, 85, 0.1);
+}
+.cal__nav input {
+  background: transparent;
+  padding: 0.3em 0;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+}
+
+/* main timeline */
+.cal {
+  max-width: 100%;
+  overflow: auto;
+  border-top: 1px solid rgba(35, 51, 85, 0.1);
+  height: 70vh;
+  min-height: 600px;
+  -webkit-overflow-scrolling: touch;
+}
+.cal li {
+  display: block;
+  position: relative;
+}
+
+/* timeline column */
+.cal__day {
+  min-width: 150px;
+  box-shadow: inset 1px 0 0 rgba(35, 51, 85, 0.2);
+}
+.cal__day:first-child {
+  box-shadow: none;
+}
+.cal__day header {
+  padding: 1.5em;
+  color: rgba(35, 51, 85, 0.7);
+}
+
+/* timeline rows */
+.cal__events {
+  padding: 0.5em 0;
+}
+.cal__event {
+  height: 80px;
+  white-space: nowrap;
+  z-index: 10;
+  cursor: pointer;
+}
+.cal__event:focus {
+  outline: 0;
+}
+.cal__event:focus .cal__event__bar,
+.cal__event:hover .cal__event__bar {
+  overflow: visible;
+}
+.cal__event:focus .cal__event__label,
+.cal__event:hover .cal__event__label {
+  box-shadow: 0 4px 8px 4px rgba(35, 51, 85, 0.1);
+}
+.cal__event--empty {
+  height: 80px;
+}
+.cal__event__bar {
+  top: 0.5em; bottom: 0.5em; left: 1em; right: 1em;
+  background: whitesmoke;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.cal__event__label {
+  left: 0; top: 0; bottom: 0;
+  padding: 1em 2.5em;
+  background: whitesmoke;
+  border-radius: 6px;
+  min-width: 100%;
+  z-index: 1000;
+}
+
+/* add event form */
+.add {
+  bottom: 30px;
+  right: 30px;
+  left: 30px;
+}
+.add.is-open .add__button {
+  transform: rotate(45deg);
+  color: white;
+  background: #223355;
+  box-shadow: none;
+}
+.add__button {
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+  background: #A4E1B9;
+  color: white;
+  border: 0;
+  outline: 0;
+  box-shadow: 0 4px 8px 4px rgba(35, 51, 85, 0.1);
+  cursor: pointer;
+}
+.add__button svg {
+  height: 25px;
+  width: 25px;
+}
+.add__button:hover {
+  background: #223355;
+}
+.add__form-container {
+  background: white;
+  box-shadow: 0 4px 8px 4px rgba(35, 51, 85, 0.1);
+  width: 100%;
+  max-width: 360px;
+  border-radius: 6px;
+}
+.add__form__inner {
+  padding: 20px 30px;
+}
+.add__form__close {
+  height: 60px;
+  width: 60px;
+  background: transparent;
+  color: rgba(35, 51, 85, 0.5);
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.add__form__close svg {
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+}
+.add__form__close:hover {
+  color: #223355;
+}
+.add__form input {
+  font-size: inherit;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #223355;
+  padding: 0.3em 0;
+  width: 75%;
+}
+.add__form__submit {
+  height: 60px;
+  color: white;
+  background: #223355;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  background: #A4E1B9;
+  color: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.add__form__submit:hover {
+  background: #223355;
+}
